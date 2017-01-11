@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local Whether</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="a free code camp project, wikipedia viewer">
+  <meta name="author" content="Sabrina Luo">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+<div id="app">
+  <h1>Weather APP</h1>
+  <p>Your location: {{locationName}}</p>
+  <p>Weather: {{weather.main}}</p>
+  <p><img :src="weather.iconUrl"></p>
+  <p>Temperature:
+    <span v-if="showTempC">{{tempC}} ℃ </span>
+    <span v-if="!showTempC">{{tempF}} ℉</span>
+  </p>
+  <button @click="showTempC=!showTempC">Switch</button>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/vue-resource/1.0.3/vue-resource.min.js"></script>
+<script src="./main.js"></script>
+</body>
+</html>
