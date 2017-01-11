@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wikipedia Viewer</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="a free code camp project, wikipedia viewer">
+  <meta name="author" content="Sabrina Luo">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+<div id="app">
+  {{{<a href="111">123</a>}}
+  <h1>Wikipedia Viewer</h1>
+  <div class="btn">
+    <a href="//en.wikipedia.org/wiki/Special:Random"
+       target="_blank">
+      Get A Random Article
+    </a>
+  </div>
+  <form v-on:submit.prevent="search(searchQuery)">
+    <input type="text" placeholder="search" v-model="searchQuery">
+    <input type="submit" value="Search">
+  </form>
+  <ul class="result-list"
+      v-if="resultList.length"
+      v-for="item in resultList">
+    <li class="">
+      <a href="item.url">
+        <h3>{{item.title}}</h3>
+        <p v-html="item.snippet"></p>
+      </a>
+    </li>
+  </ul>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/vue-resource/1.0.3/vue-resource.min.js"></script>
+<script src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+#app{
+    width:100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.btn{
+    display: inline-block;
+    background-color: darkorange;
+    color: white;
+    font-weight: bold;
+}
+
+a, a:link,a:visited{
+
+}
